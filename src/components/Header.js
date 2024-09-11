@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
-import '../styles/Header.css'; // Chemin vers le fichier CSS
-import { Link } from 'react-router-dom'; // Importer Link pour la navigation
-import logo from '../images/logo.png'; // Chemin vers le logo dans le dossier images
-
+import { Link } from 'react-router-dom';
+import logo from '../image/taches.png'; // Chemin vers le logo dans le dossier images
+import '../styles/Header.css'; 
 const Header = () => {
-  const [menuOpen, setMenuOpen] = useState(false); // État pour gérer l'ouverture du menu
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
-    setMenuOpen(!menuOpen); // Inverser l'état du menu
+    setMenuOpen(!menuOpen);
   };
 
   const handleLogout = () => {
-    // Ajouter la logique de déconnexion ici
+    // Logique de déconnexion ici
     console.log('Déconnexion réussie');
   };
 
@@ -24,9 +23,9 @@ const Header = () => {
       <nav className={`nav ${menuOpen ? 'open' : ''}`}>
         <ul className="nav-list">
           <li><Link to="/" onClick={() => setMenuOpen(false)}>Accueil</Link></li>
-          <li><Link to="/tasks" onClick={() => setMenuOpen(false)}>Tâches</Link></li>
-          <li><Link to="/user-management" onClick={() => setMenuOpen(false)}>Gestion des Utilisateurs</Link></li>
-          <li><Link to="/profile" onClick={() => setMenuOpen(false)}>Profil</Link></li>
+          <li><Link to="/tache" onClick={() => setMenuOpen(false)}>Tâches</Link></li> {/* Modifié ici */}
+          <li><Link to="/gestion-utilisateurs" onClick={() => setMenuOpen(false)}>Gestion des Utilisateurs</Link></li>
+          <li><Link to="/profil" onClick={() => setMenuOpen(false)}>Profil</Link></li>
           <li><button className="logout-button" onClick={handleLogout}>Déconnexion</button></li>
         </ul>
       </nav>
@@ -35,3 +34,5 @@ const Header = () => {
 };
 
 export default Header;
+
+

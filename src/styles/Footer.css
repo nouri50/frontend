@@ -1,43 +1,35 @@
 .footer {
-    background-color: #F1F1F1;
-    padding: 1rem;
-    text-align: center;
-    position: relative;
+    position: fixed;
     bottom: 0;
     width: 100%;
-}
-
-.footer-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    background-color: #f1f1f1; /* Couleur de fond */
+    text-align: center;
+    padding: 10px 0;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    font-size: 14px;
+    z-index: 1000;
+    border-top: 1px solid #e0e0e0; /* Ligne en haut du footer */
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap; /* Permet au contenu de se réorganiser pour les petits écrans */
-}
-
-.footer-list li {
-    margin: 0 1rem;
-}
-
-.footer-list li a {
+    justify-content: center; /* Centrer les liens horizontalement */
+    gap: 15px; /* Espace entre les liens */
+  }
+  
+  .footer a {
+    color: #333; /* Couleur des liens */
     text-decoration: none;
-    color: #007AFF;
-    font-size: 1rem;
-}
-
-/* Styles pour mobile */
-@media (max-width: 768px) {
-    .footer-list {
-        flex-direction: column;
-        align-items: center;
+  }
+  
+  .footer a:hover {
+    text-decoration: underline; /* Style au survol */
+  }
+  
+  /* Responsive - version mobile */
+  @media (max-width: 600px) {
+    .footer {
+      flex-direction: column; /* Les liens deviennent verticaux */
+      align-items: center; /* Centrer les liens verticalement */
+      gap: 10px; /* Espace réduit entre les liens pour mobile */
     }
+  }
 
-    .footer-list li {
-        margin: 0.5rem 0;
-    }
-
-    .footer-list li a {
-        font-size: 1.2rem;
-    }
-}
+  

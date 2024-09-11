@@ -1,30 +1,32 @@
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
-import Footer from './components/Footer';
-import HomePage from './pages/HomePage'; // Si tu as une page d'accueil
-import LandingPage from './pages/LandingPage'; // Importer la Landing Page
-import LoginPage from './pages/LoginPage';
-import SignupPage from './pages/SignupPage';
+import Footer from './components/Footer'; 
+import LandingPage from './pages/LandingPage';
 import TaskPage from './pages/TaskPage';
-import ChangePasswordPage from './pages/ChangePasswordPage';
 import UserManagementPage from './pages/UserManagementPage';
+import ProfilPage from './pages/ProfilPage';
+import ChangePasswordPage from './pages/ChangePasswordPage';
+
 
 function App() {
-    return (
-        <Router>
-            <Header />
-            <Switch>
-                <Route path="/" exact component={LandingPage} /> {/* Landing Page comme page d'accueil */}
-                <Route path="/login" component={LoginPage} />
-                <Route path="/signup" component={SignupPage} />
-                <Route path="/tasks" component={TaskPage} />
-                <Route path="/change-password" component={ChangePasswordPage} />
-                <Route path="/user-management" component={UserManagementPage} />
-                <Route path="/home" component={HomePage} /> {/* Si tu veux garder la Home Page */}
-            </Switch>
-            <Footer />
-        </Router>
-    );
+  return (
+    <BrowserRouter>
+      <Header />
+      <main>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/tache" element={<TaskPage />} />
+          <Route path="/gestion-utilisateurs" element={<UserManagementPage />} />
+          <Route path="/profil" element={<ProfilPage />} />
+          <Route path="/changer-mot-de-passe" element={<ChangePasswordPage />} />
+    
+        </Routes>
+      </main>
+      <Footer />
+    </BrowserRouter>
+  );
 }
 
 export default App;
+

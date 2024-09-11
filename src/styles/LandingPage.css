@@ -1,0 +1,61 @@
+body {
+    height: 100%;
+    margin: 0;
+}
+
+/* Conteneur principal qui occupe toute la hauteur de la page */
+.landing-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Aligne le contenu en haut de la page */
+    align-items: center; /* Centre horizontalement le contenu */
+    background-color: rgba(0, 122, 255, 0.15); /* Couleur de fond avec 15% d'opacité */
+    padding: 20px;
+}
+
+/* Titre */
+h1 {
+    font-size: 2.5rem;
+    margin: 10px 0; /* Ajoute un espace autour du titre */
+    text-align: center; /* Centre le titre */
+}
+
+/* Paragraphe avec bordure */
+.paragraph-container {
+    border: 1px solid rgba(0, 122, 255, 0.5); /* Bordure légère autour du paragraphe */
+    border-radius: 8px; /* Bord arrondi pour la bordure */
+    padding: 20px; /* Espace intérieur pour le paragraphe */
+    margin-bottom: 10px; /* Espace sous le paragraphe */
+    background-color: white; /* Fond blanc pour le paragraphe */
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: space-around; /* Centre les boutons */
+    width: 80%; /* Prend la largeur du cadre */
+    margin-top: 10px; /* Espace au-dessus des boutons */
+}
+
+.start-button,
+.learn-more-button {
+    background-color: #007AFF; /* Couleur de fond */
+    color: white;
+    border: none;
+    padding: 8px 12px; /* Réduit la taille des boutons */
+    font-size: 14px; /* Diminue la taille de la police */
+    border-radius: 8px; /* Applique un bord arrondi */
+    cursor: pointer;
+    width: auto; /* Largeur automatique */
+    min-width: 100px; /* Largeur minimale pour éviter qu'ils ne soient trop petits */
+    max-width: 120px; /* Largeur maximale pour éviter qu'ils ne soient trop grands */
+    margin: 0 10px; /* Espace réduit entre les boutons */
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2); /* Ombre intérieure */
+    transition: background-color 0.3s, transform 0.2s; /* Transition pour le hover */
+}
+
+.start-button:hover,
+.learn-more-button:hover {
+    background-color: #005BB5; /* Couleur au survol */
+    transform: translateY(-2px); /* Léger effet de soulèvement au survol */
+}
